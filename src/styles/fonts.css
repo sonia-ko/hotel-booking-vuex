@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "oxygenbold";
+  src: url("./../fonts/oxygen-bold-webfont.woff2") format("woff2"),
+    url("./../fonts/oxygen-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "oxygenlight";
+  src: url("./../fonts/oxygen-light-webfont.woff2") format("woff2"),
+    url("./../fonts/oxygen-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "oxygenregular";
+  src: url("./../fonts/oxygen-regular-webfont.woff2") format("woff2"),
+    url("./../fonts/oxygen-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "arvobold";
+  src: url("./../fonts/arvo-bold-webfont.woff2") format("woff2"),
+    url("./../fonts/arvo-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "arvobold_italic";
+  src: url("./../fonts/arvo-bolditalic-webfont.woff2") format("woff2"),
+    url("./../fonts/arvo-bolditalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
