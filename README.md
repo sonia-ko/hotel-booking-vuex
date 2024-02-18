@@ -5,6 +5,8 @@ This is a Vue hotel bookingcalendar that uses the following technologies:
 - Vue.js to create the components and manage the UI.
 - Vuex for state management to handle the reservations data and navigation state
 
+The demo can be checked [here](https://cli.vuejs.org/config/).
+
 ## Project setup
 
 ```

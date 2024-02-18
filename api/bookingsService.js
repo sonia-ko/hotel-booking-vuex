@@ -60,6 +60,7 @@ export const getRoomNames = () => {
   });
 };
 
+// get the bookings for a specific week depending on the start and end date
 export const getBookingsForWeek = (startDate, endDate) => {
   return new Promise((resolve) => {
     const bookings = bookingsData.filter((booking) => {
