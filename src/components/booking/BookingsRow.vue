@@ -82,17 +82,14 @@ export default {
         this.generateTimestamps(day)
       );
 
-      // Check if the booking start date is within the daysOfWeek range
       const startIndex = daysOfWeekDates.findIndex(
         (day) => day.getTime() === bookingStart.getTime()
       );
 
       if (startIndex === -1) {
-        // If the start date is not within the range, return 0
         return 0;
       } else {
-        // Calculate left position based on the index of the start date
-        left = startIndex * 11 + 5.5; // Each day takes up 11vw
+        left = startIndex * 11 + 5.5;
         return left;
       }
     },

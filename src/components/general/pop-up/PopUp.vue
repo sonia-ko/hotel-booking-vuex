@@ -5,10 +5,20 @@
       <div>
         <h2>{{ popupData.name }}</h2>
         <ul class="booking-list">
-          <li>Phone: {{ popupData.phone }}</li>
-          <li>Email: {{ popupData.email }}</li>
-          <li>Start date: {{ popupData.start }}</li>
-          <li>End date: {{ popupData.end }}</li>
+          <li>
+            Contacts:
+            <ul>
+              <li>Phone: {{ popupData.phone }}</li>
+              <li>Email: {{ popupData.email }}</li>
+            </ul>
+          </li>
+          <li>
+            Booking dates:
+            <ul>
+              <li>Start date: {{ popupData.start }}</li>
+              <li>End date: {{ popupData.end }}</li>
+            </ul>
+          </li>
           <li>Type of apartments: {{ popupData.typeOfApartments }}</li>
           <li>
             Number of quests:
@@ -52,7 +62,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.25rem;
-  border: 2px soid black;
+  border: 2px solid black;
   box-sizing: border-box;
 }
 
@@ -81,7 +91,7 @@ export default {
   left: 11px;
   width: 2px;
   height: 24px;
-  background-color: #000; /* You can change the color */
+  background-color: #000;
 }
 
 .close-icon::before {
@@ -94,8 +104,9 @@ export default {
 
 .booking-list {
   margin: 2rem 0 0 0;
-  padding-left: 1rem;
+  padding-left: 0;
   display: grid;
   row-gap: 1.5rem;
+  list-style-type: none;
 }
 </style>

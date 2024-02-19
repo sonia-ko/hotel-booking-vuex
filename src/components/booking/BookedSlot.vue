@@ -1,9 +1,13 @@
 <template>
-  <div :style="buttonStyle" :onclick="handleClick" class="absolute-container">
-    <button :disabled="popupShown" class="btn">
+  <button
+    :style="buttonStyle"
+    :onclick="handleClick"
+    class="absolute-container"
+  >
+    <div :disabled="popupShown" class="text-container">
       {{ btnText }}
-    </button>
-  </div>
+    </div>
+  </button>
 </template>
 
 <script>
@@ -71,13 +75,14 @@ export default {
   background-color: rgba(46, 114, 114, 0.637);
   bottom: 0;
   display: flex;
+  align-items: center;
   padding-left: 0.5rem;
   min-height: 3rem;
   border: 2px solid rgb(251, 255, 0);
   border-radius: 4px;
   box-sizing: border-box;
 }
-.btn {
+.text-container {
   width: auto;
   margin: 0;
   padding: 0;

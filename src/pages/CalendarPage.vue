@@ -2,25 +2,25 @@
   <div class="container">
     <h1>Our Calendar</h1>
     <navigation-buttons />
-    <booking-calendar />
+    <calendar-container />
   </div>
 </template>
 
 <script>
-import NavigationButtons from "@/components/booking/NavigationButtons.vue";
-import BookingCalendar from "@/components/booking/BookingCalendar.vue";
 import { mapActions } from "vuex";
+import NavigationButtons from "@/components/booking/NavigationButtons.vue";
+import CalendarContainer from "@/components/booking/CalendarContainer.vue";
 
 export default {
   name: "CalendarPage",
-  components: { BookingCalendar, NavigationButtons },
+  components: { CalendarContainer, NavigationButtons },
+  methods: {
+    ...mapActions(["fetchRooms", "fetchCurrentWeekBookings"]),
+  },
+  // once the page loads, the room names and the booking for the current week are fetched
   created() {
     this.fetchRooms();
     this.fetchCurrentWeekBookings();
-  },
-
-  methods: {
-    ...mapActions(["fetchRooms", "fetchCurrentWeekBookings"]),
   },
 };
 </script>

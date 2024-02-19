@@ -1,8 +1,8 @@
 import bookingsData from "./bookings.json"; // Import the JSON data
 
-// Simulate an API
+// Simulate an API to get the data related to booking
 
-// helper function that checks if the bookins is in the current week
+// helper function that checks if the booking is in the current week
 function isBookingInCurrentWeek(
   bookingStart,
   bookingEnd,
@@ -37,7 +37,8 @@ function isBookingInCurrentWeek(
   return bookingStartDate <= endOfWeek && bookingEndDate >= startOfWeek;
 }
 
-// checks
+// provide bookings for the current week (based on todays date)
+// the DB is quite large, so we get only the current week bookings from our fake server
 export const getCurrentWeekBookings = () => {
   return new Promise((resolve) => {
     const currentWeekBookings = bookingsData.filter((booking) => {
@@ -48,6 +49,7 @@ export const getCurrentWeekBookings = () => {
   });
 };
 
+//sends an array with the unique room names
 export const getRoomNames = () => {
   return new Promise((resolve) => {
     const roomNamesSet = new Set();
@@ -60,7 +62,7 @@ export const getRoomNames = () => {
   });
 };
 
-// get the bookings for a specific week depending on the start and end date
+// provide the bookings for a specific week depending on the start and end date
 export const getBookingsForWeek = (startDate, endDate) => {
   return new Promise((resolve) => {
     const bookings = bookingsData.filter((booking) => {

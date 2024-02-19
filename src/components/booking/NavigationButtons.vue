@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import PrimaryButton from "@/components/general/primary-button/PrimaryButton.vue";
 import { mapActions } from "vuex";
+import PrimaryButton from "@/components/general/primary-button/PrimaryButton.vue";
 
 export default {
   name: "NavigationButtons",

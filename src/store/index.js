@@ -44,12 +44,12 @@ export default createStore({
     async fetchRooms({ commit }) {
       try {
         const response = await getRoomNames();
-
         commit("setRooms", response);
       } catch (error) {
         console.error("Error fetching rooms:", error);
       }
     },
+    //generate days of week depending on the baseDate
     generateDaysOfWeek({ commit }) {
       const baseDate = new Date(this.state.baseDate);
       const todayIndex = baseDate.getDay() === 0 ? 6 : baseDate.getDay() - 1;
@@ -73,36 +73,36 @@ export default createStore({
     async fetchCurrentWeekBookings({ commit, dispatch }) {
       try {
         dispatch("generateDaysOfWeek");
-        // Fetch current week bookings
         const bookings = await getCurrentWeekBookings();
         commit("setCurrentWeekBookings", bookings);
       } catch (error) {
         console.error("Error fetching bookings:", error);
       }
     },
+    // this function updates the bookings when the user clicks on 'next week' or 'previous week' buttons
     async updateBookings({ commit }) {
       try {
         const startDate = this.state.daysOfWeek[0];
         const endDate = this.state.daysOfWeek[6];
         const bookings = await getBookingsForWeek(startDate, endDate);
         commit("setCurrentWeekBookings", bookings);
-        // commit("setWeekDates", { startDate, endDate });
       } catch (error) {
         console.error("Error fetching bookings for the week:", error);
       }
     },
+    // set the week to next week and update the bookings
     async setNextWeek({ commit, state, dispatch }) {
       const baseDate = new Date(state.baseDate);
-      baseDate.setDate(baseDate.getDate() + 7); // Move baseDate to the next week
+      baseDate.setDate(baseDate.getDate() + 7);
       commit("setBaseDate", baseDate);
       dispatch("generateDaysOfWeek");
-      // await dispatch("fetchCurrentWeekBookings");
       await dispatch("updateBookings");
     },
+    // set the week to previous week and update the bookings
     async setPrevWeek({ commit, dispatch }) {
       try {
         const baseDate = new Date(this.state.baseDate);
-        baseDate.setDate(baseDate.getDate() - 7); // Move baseDate to the previous week
+        baseDate.setDate(baseDate.getDate() - 7);
         commit("setBaseDate", baseDate);
         dispatch("generateDaysOfWeek");
         await dispatch("updateBookings");
@@ -110,6 +110,7 @@ export default createStore({
         console.error("Error fetching bookings for the week:", error);
       }
     },
+    // reset the calendar so that it shows the current week (when the user clicks on Today button)
     async setCurrentWeek({ commit, dispatch }) {
       try {
         commit("setBaseDate", new Date());

@@ -1,20 +1,20 @@
 <template>
   <div class="calendar">
     <booking-header />
-    <bookings-container />
+    <rows-container />
   </div>
   <pop-up v-if="popUpOpened" />
 </template>
 
 <script>
 import BookingHeader from "./BookingHeader.vue";
-import BookingsContainer from "./BookingsContainer.vue";
+import RowsContainer from "./RowsContainer.vue";
 import PopUp from "../general/pop-up/PopUp.vue";
 import { mapGetters } from "vuex";
 
 export default {
-  name: "BookingCalendar",
-  components: { BookingHeader, BookingsContainer, PopUp },
+  name: "CalendarContainer",
+  components: { BookingHeader, RowsContainer, PopUp },
   computed: {
     ...mapGetters(["popUpOpened"]),
   },
