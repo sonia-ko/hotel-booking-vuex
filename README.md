@@ -40,6 +40,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ## Project description
 
 The calendar looks like:
+![image](https://github.com/sonia-ko/hotel-booking-vuex/assets/57558085/79e2e039-2886-401c-8045-c6a9d149a29d)
+
 
 - Each row in the table represents an apartment.
 - Each column represents a day of the week (Mon-Sun).
@@ -47,8 +49,14 @@ The calendar looks like:
 - &quot;Back&quot; button moves the calendar a week ago.
 - &quot;Today&quot; button returns the calendar to the current week.
 - Reservations start from the middle of the start date and end in the middle of the end date.
+![image](https://github.com/sonia-ko/hotel-booking-vuex/assets/57558085/98f8e49e-89a3-4c58-80c1-2a684c2d7029)
+
 - If there are 2 reservations on the same day at the same time, it will be shown in the calendar like this:
+- ![image](https://github.com/sonia-ko/hotel-booking-vuex/assets/57558085/a4f45651-a532-4721-917c-c7c039d3f48a)
+
 - When the user clicks on the reservation, there is a small pop-up with reservation details:
+![image](https://github.com/sonia-ko/hotel-booking-vuex/assets/57558085/821a463e-b1d0-42c7-9068-94b207026b18)
+
 - By clicking on X button, the user closes the pop-up.
 
 ## Project structure
