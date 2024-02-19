@@ -7,7 +7,7 @@ This is a Vue hotel booking calendar. It uses the following technologies:
 
 ## Demo
 
-The demo can be checked [here](https://cli.vuejs.org/config/).
+The demo can be checked [here](https://hotel-booking-vuex.netlify.app).
 
 ## Project setup
 
